@@ -12,6 +12,7 @@ console.log(path.join(__dirname, "../public")); // path.join() takes 2 argument
  1st- which path to edit, 2nd- where we want to go from that path
 */
 const app = express();
+const port = process.env.PORT || 3000; // on deployment process.env.PORT this port will be used , and locally 3000
 
 // DEFINE PATHS FOR EXPRESS CONFIG
 const publicDirectoryPath = path.join(__dirname, "../public");
@@ -104,6 +105,6 @@ app.get("*", (req, res) => {
 }); // * means any route that we have not listed in our route handlers, This is for error handling
 
 // To start server use app.listen()
-app.listen(3000, () => {
+app.listen(port, () => {
   console.log("Server is up on port 3000");
 }); // 1- port number, 2-(optional) callback function which runs when server is runing
