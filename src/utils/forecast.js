@@ -6,11 +6,14 @@ const forecast = (address, callback) => {
     else if (res.body.success === false)
       callback({ error: "Address not found" }, undefined);
     else {
+      console.log(res.body);
       callback(undefined, {
         forecast: res.body.current.weather_descriptions[0],
         temp: res.body.current.temperature,
-        location: res.body.location.country,
-        address: res.body.location.region,
+        country: res.body.location.country,
+        location: res.body.location.name,
+        state: res.body.location.region,
+        humidity: res.body.current.humidity,
       });
     }
   });

@@ -16,8 +16,8 @@ form.addEventListener("submit", (e) => {
         messageOne.textContent = "";
         messageTwo.textContent = data.error;
       } else {
-        messageOne.textContent = `${data.address}, ${data.location}`;
-        messageTwo.textContent = `It's currently ${data.forecast} in ${data.address} with temperature of ${data.temp} fahrenheit`;
+        messageOne.textContent = `${data.location}, ${data.state}, ${data.country}`;
+        messageTwo.textContent = `It's currently ${data.forecast} in ${data.location} with temperature of ${data.temp} fahrenheit with humidity of ${data.humidity}.`;
       }
     })
   );
